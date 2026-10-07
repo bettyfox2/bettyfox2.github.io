@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>瓜子影视-影视资源分类导航与观影指南</title>
+<meta name="description" content="瓜子影视是一个影视资源分类导航与观影信息聚合页面，提供电影、电视剧、综艺、动漫、纪录片等频道分类，整理热门推荐、最新更新、口碑榜单与观影常见问题，帮助用户快速找到想看的影视内容。">
+<meta name="keywords" content="瓜子影视,影视资源,在线影视,电影推荐,电视剧,综艺,动漫,纪录片,观影指南">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg-deep: #0e0f14;
+    --bg-panel: #16181f;
+    --bg-card: #1d2029;
+    --bg-card-hover: #242836;
+    --line: #2b2f3c;
+    --text-main: #eef1f7;
+    --text-sub: #a2a9bb;
+    --text-dim: #767e93;
+    --accent: #ffb02e;
+    --accent-deep: #e8930c;
+    --accent-soft: rgba(255, 176, 46, 0.12);
+    --radius: 14px;
+    --radius-sm: 9px;
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg-deep);
+    color: var(--text-main);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+ul {
+    list-style: none;
+}
+.wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* ============ 顶部导航 ============ */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(14, 15, 20, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+}
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    height: 66px;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+.logo-mark {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #17181d;
+    font-weight: 800;
+}
+.logo span em {
+    font-style: normal;
+    color: var(--accent);
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+.main-nav a {
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 14.5px;
+    color: var(--text-sub);
+    transition: 0.22s;
+}
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--text-main);
+    background: var(--bg-card);
+}
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 5px 6px 5px 14px;
+    transition: 0.25s;
+}
+.search-box:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-main);
+    width: 150px;
+    font-size: 14px;
+}
+.search-box input::placeholder {
+    color: var(--text-dim);
+}
+.search-box button {
+    border: none;
+    background: var(--accent);
+    color: #17181d;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 5px 13px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.search-box button:hover {
+    background: #ffc257;
+}
+.menu-toggle {
+    display: none;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    color: var(--text-main);
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+/* ============ 首屏 ============ */
+.hero {
+    position: relative;
+    padding: 56px 0 44px;
+    background:
+        radial-gradient(circle at 12% 18%, rgba(255, 176, 46, 0.16), transparent 46%),
+        radial-gradient(circle at 88% 8%, rgba(84, 120, 255, 0.14), transparent 50%),
+        var(--bg-deep);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+}
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 42px;
+    align-items: center;
+}
+.hero-tag {
+    display: inline-block;
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(255, 176, 46, 0.3);
+    padding: 4px 13px;
+    border-radius: 20px;
+    margin-bottom: 18px;
+}
+.hero h1 {
+    font-size: 40px;
+    line-height: 1.3;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+}
+.hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+}
+.hero p.lead {
+    color: var(--text-sub);
+    font-size: 16px;
+    max-width: 560px;
+    margin-bottom: 26px;
+}
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 24px;
+    border-radius: 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.24s;
+}
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
+    color: #17181d;
+}
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(255, 176, 46, 0.3);
+}
+.btn-ghost {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--text-sub);
+}
+.btn-ghost:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 34px;
+}
+.hero-stats .stat b {
+    display: block;
+    font-size: 22px;
+    color: var(--accent);
+    font-weight: 800;
+}
+.hero-stats .stat span {
+    font-size: 13px;
+    color: var(--text-dim);
+}
+.hero-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+}
+.hero-panel h3 {
+    font-size: 15px;
+    color: var(--text-sub);
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.hero-panel h3::before {
+    content: "";
+    width: 4px;
+    height: 15px;
+    border-radius: 3px;
+    background: var(--accent);
+}
+.hot-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px dashed var(--line);
+}
+.hot-list li:last-child {
+    border-bottom: none;
+}
+.hot-list .rank {
+    width: 22px;
+    height: 22px;
+    flex: 0 0 22px;
+    border-radius: 6px;
+    background: var(--bg-card);
+    color: var(--text-dim);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hot-list li:nth-child(1) .rank {
+    background: var(--accent);
+    color: #17181d;
+}
+.hot-list li:nth-child(2) .rank {
+    background: #ff8a3d;
+    color: #17181d;
+}
+.hot-list li:nth-child(3) .rank {
+    background: #6f7bd6;
+    color: #fff;
+}
+.hot-list .name {
+    flex: 1;
+    font-size: 14.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.hot-list .meta {
+    font-size: 12.5px;
+    color: var(--text-dim);
+}
+/* ============ 通用区块 ============ */
+.section {
+    padding: 52px 0;
+}
+.section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 26px;
+    flex-wrap: wrap;
+}
+.section-head h2 {
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+.section-head h2 span {
+    color: var(--accent);
+}
+.section-head .desc {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin-top: 6px;
+}
+.section-head .more {
+    font-size: 14px;
+    color: var(--text-sub);
+    border-bottom: 1px solid transparent;
+    transition: 0.2s;
+}
+.section-head .more:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+/* ============ 分类频道 ============ */
+.channel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(168px, 1fr));
+    gap: 16px;
+}
+.channel-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 18px;
+    transition: 0.25s;
+}
+.channel-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(255, 176, 46, 0.45);
+    transform: translateY(-3px);
+}
+.channel-card .ico {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+.channel-card h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.channel-card p {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+}
+/* ============ 推荐卡片 ============ */
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    gap: 20px;
+}
+.movie-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: 0.26s;
+    display: flex;
+    flex-direction: column;
+}
+.movie-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 176, 46, 0.4);
+    box-shadow: var(--shadow);
+}
+.movie-cover {
+    height: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 34px;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 2px;
+    position: relative;
+}
+.cover-1 { background: linear-gradient(135deg, #3b4a8c, #1d2340); }
+.cover-2 { background: linear-gradient(135deg, #8c3b3b, #40191d); }
+.cover-3 { background: linear-gradient(135deg, #2f7a6a, #14352f); }
+.cover-4 { background: linear-gradient(135deg, #7a5a2f, #33240f); }
+.cover-5 { background: linear-gradient(135deg, #5b3b8c, #241540); }
+.cover-6 { background: linear-gradient(135deg, #2f5f8c, #12283d); }
+.cover-7 { background: linear-gradient(135deg, #8c6a2f, #3d2c0d); }
+.cover-8 { background: linear-gradient(135deg, #41648c, #16283a); }
+.movie-cover .badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 2px 9px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.55);
+    color: var(--accent);
+    letter-spacing: 0;
+}
+.movie-cover .score {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 2px 9px;
+    border-radius: 12px;
+    letter-spacing: 0;
+}
+.movie-body {
+    padding: 14px 15px 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.movie-body h3 {
+    font-size: 15.5px;
+    margin-bottom: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.movie-body .info {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    margin-bottom: 9px;
+}
+.movie-body .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: auto;
+}
+.movie-body .tags span {
+    font-size: 11.5px;
+    color: var(--text-sub);
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+/* ============ 更新 + 榜单 双栏 ============ */
+.two-col {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 34px;
+    align-items: start;
+}
+.update-list li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+}
+.update-list li:last-child {
+    border-bottom: none;
+}
+.update-list .ep {
+    flex: 0 0 auto;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 6px;
+    padding: 3px 9px;
+    min-width: 52px;
+    text-align: center;
+}
+.update-list .u-name {
+    font-size: 14.5px;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.update-list .u-type {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    flex: 0 0 auto;
+}
+.update-list .u-time {
+    font-size: 12.5px;
+    color: var(--text-dim);
+    flex: 0 0 auto;
+    min-width: 54px;
+    text-align: right;
+}
+.rank-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+}
+.rank-panel h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+.rank-panel .sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+}
+.rank-panel li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--line);
+}
+.rank-panel li:last-child {
+    border-bottom: none;
+}
+.rank-panel .no {
+    font-size: 14px;
+    font-weight: 800;
+    color: var(--text-dim);
+    width: 20px;
+    flex: 0 0 20px;
+}
+.rank-panel li:nth-child(-n+3) .no {
+    color: var(--accent);
+}
+.rank-panel .r-name {
+    flex: 1;
+    font-size: 14.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.rank-panel .r-heat {
+    font-size: 12.5px;
+    color: var(--text-dim);
+}
+/* ============ 观影指南 ============ */
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+.guide-item {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 20px 20px 22px;
+}
+.guide-item h3 {
+    font-size: 16px;
+    margin-bottom: 9px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.guide-item h3 .n {
+    font-size: 12px;
+    color: var(--accent);
+    border: 1px solid rgba(255, 176, 46, 0.4);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 20px;
+}
+.guide-item p {
+    font-size: 13.8px;
+    color: var(--text-sub);
+    line-height: 1.75;
+}
+/* ============ 内容说明 ============ */
+.intro-block {
+    background: var(--bg-panel);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px 30px;
+}
+.intro-block h2 {
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+.intro-block h2 span {
+    color: var(--accent);
+}
+.intro-block p {
+    color: var(--text-sub);
+    font-size: 14.8px;
+    margin-bottom: 14px;
+}
+.intro-block p:last-child {
+    margin-bottom: 0;
+}
+/* ============ FAQ ============ */
+.faq-list {
+    display: grid;
+    gap: 12px;
+}
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+.faq-q {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 15.5px;
+    font-weight: 600;
+    font-family: inherit;
+    padding: 16px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    transition: 0.2s;
+}
+.faq-q:hover {
+    color: var(--accent);
+}
+.faq-q .arrow {
+    color: var(--accent);
+    font-size: 13px;
+    transition: transform 0.25s;
+    flex: 0 0 auto;
+}
+.faq-item.open .faq-q .arrow {
+    transform: rotate(180deg);
+}
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.32s ease;
+}
+.faq-a p {
+    padding: 0 20px 18px;
+    color: var(--text-sub);
+    font-size: 14.2px;
+    line-height: 1.8;
+}
+/* ============ 页脚 ============ */
+.site-footer {
+    background: #0a0b0f;
+    border-top: 1px solid var(--line);
+    padding: 46px 0 26px;
+    margin-top: 20px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+}
+.footer-brand .logo {
+    margin-bottom: 12px;
+}
+.footer-brand p {
+    font-size: 13.5px;
+    color: var(--text-dim);
+    line-height: 1.8;
+    max-width: 320px;
+}
+.footer-col h4 {
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: var(--text-main);
+}
+.footer-col li {
+    margin-bottom: 9px;
+}
+.footer-col a {
+    font-size: 13.8px;
+    color: var(--text-dim);
+    transition: 0.2s;
+}
+.footer-col a:hover {
+    color: var(--accent);
+}
+.footer-bottom {
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--text-dim);
+}
+.footer-bottom .tip {
+    color: #5d6478;
+}
+/* ============ 响应式 ============ */
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+    }
+    .two-col {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 26px;
+    }
+}
+@media (max-width: 768px) {
+    .header-inner {
+        height: 60px;
+        flex-wrap: wrap;
+    }
+    .main-nav {
+        display: none;
+        width: 100%;
+        order: 3;
+        padding: 10px 0 14px;
+        gap: 6px;
+    }
+    .main-nav.show {
+        display: flex;
+    }
+    .main-nav a {
+        background: var(--bg-card);
+        font-size: 13.5px;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .search-box input {
+        width: 96px;
+    }
+    .hero {
+        padding: 40px 0 34px;
+    }
+    .hero h1 {
+        font-size: 29px;
+    }
+    .hero p.lead {
+        font-size: 15px;
+    }
+    .hero-stats {
+        gap: 24px;
+    }
+    .section {
+        padding: 40px 0;
+    }
+    .section-head h2 {
+        font-size: 21px;
+    }
+    .intro-block {
+        padding: 24px 20px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+@media (max-width: 480px) {
+    .wrap {
+        padding: 0 15px;
+    }
+    .hero h1 {
+        font-size: 25px;
+    }
+    .hero-actions .btn {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 14px;
+    }
+    .movie-cover {
+        height: 106px;
+        font-size: 26px;
+    }
+    .hot-list .meta {
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="wrap header-inner">
+        <a class="logo" href="#top">
+            <span class="logo-mark">瓜</span>
+            <span>瓜子<em>影视</em></span>
+        </a>
+        <nav class="main-nav" id="mainNav">
+            <a href="#top" class="active">首页</a>
+            <a href="#channels">频道分类</a>
+            <a href="#recommend">热门推荐</a>
+            <a href="#updates">最近更新</a>
+            <a href="#ranking">口碑榜单</a>
+            <a href="#guide">观影指南</a>
+            <a href="#faq">常见问题</a>
+        </nav>
+        <div class="header-actions">
+            <form class="search-box" onsubmit="return false;">
+                <input type="text" placeholder="搜索片名 / 类型 / 年份" aria-label="搜索影视内容">
+                <button type="button">搜索</button>
+            </form>
+            <button class="menu-toggle" id="menuToggle" aria-label="展开导航">☰</button>
+        </div>
+    </div>
+</header>
+
+<main id="top">
+
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="wrap hero-grid">
+            <div>
+                <span class="hero-tag">影视分类导航 · 观影信息聚合</span>
+                <h1>瓜子影视：把想看的<em>电影与剧集</em>快速找齐</h1>
+                <p class="lead">
+                    瓜子影视是一个面向普通观众的影视内容导航页面，把电影、电视剧、综艺、动漫、纪录片等频道集中整理在一起，
+                    按类型、地区、年份和口碑做分类，让你在打开页面的第一时间就能判断「今天看什么」。
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#recommend">浏览热门推荐</a>
+                    <a class="btn btn-ghost" href="#guide">查看观影指南</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><b>6</b><span>主要频道分类</span></div>
+                    <div class="stat"><b>4</b><span>筛选维度</span></div>
+                    <div class="stat"><b>每日</b><span>更新整理</span></div>
+                </div>
+            </div>
+            <aside class="hero-panel">
+                <h3>今日热门关注</h3>
+                <ul class="hot-list">
+                    <li>
+                        <span class="rank">1</span>
+                        <span class="name">院线新片与话题电影</span>
+                        <span class="meta">电影</span>
+                    </li>
+                    <li>
+                        <span class="rank">2</span>
+                        <span class="name">都市情感与悬疑剧集</span>
+                        <span class="meta">电视剧</span>
+                    </li>
+                    <li>
+                        <span class="rank">3</span>
+                        <span class="name">国产动画与长篇番剧</span>
+                        <span class="meta">动漫</span>
+                    </li>
+                    <li>
+                        <span class="rank">4</span>
+                        <span class="name">旅行与美食类慢综艺</span>
+                        <span class="meta">综艺</span>
+                    </li>
+                    <li>
+                        <span class="rank">5</span>
+                        <span class="name">自然与历史题材纪录片</span>
+                        <span class="meta">纪录片</span>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- 频道分类 -->
+    <section class="section" id="channels">
+        <div class="wrap">
+            <div class="section-head">
+                <div>
+                    <h2>频道<span>分类</span></h2>
+                    <p class="desc">按内容形态划分，先确定想看什么类型，再进入对应频道筛选。</p>
+                </div>
+            </div>
+            <div class="channel-grid">
+                <article class="channel-card">
+                    <div class="ico">🎬</div>
+                    <h3>电影</h3>
+                    <p>院线片、经典老片、地区电影与类型片，适合一次看完的完整叙事。</p>
+                </article>
+                <article class="channel-card">
+                    <div class="ico">📺</div>
+                    <h3>电视剧</h3>
+                    <p>国产剧、海外剧、短剧与长剧，按更新节奏与集数长度选择。</p>
+                </article>
+                <article class="channel-card">
+                    <div class="ico">🎤</div>
+                    <h3>综艺</h3>
+                    <p>竞技、访谈、旅行、美食等类型，适合放松时观看的轻内容。</p>
+                </article>
+                <article class="channel-card">
+                    <div class="ico">🌸</div>
+                    <h3>动漫</h3>
+                    <p>国产动画、日番、剧场版与短篇动画，关注更新周期与季数。</p>
+                </article>
+                <article class="channel-card">
+                    <div class="ico">🌍</div>
+                    <h3>纪录片</h3>
+                    <p>自然、历史、人文、科技题材，信息密度高，适合深度学习。</p>
+                </article>
+                <article class="channel-card">
+                    <div class="ico">🎭</div>
+                    <h3>其他内容</h3>
+                    <p>脱口秀、戏曲、舞台剧录像等细分类型，按兴趣单独归类。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门推荐 -->
+    <section class="section" id="recommend">
+        <div class="wrap">
+            <div class="section-head">
+                <div>
+                    <h2>热门<span>推荐</span></h2>
+                    <p class="desc">结合题材、讨论度与观看完成度整理的推荐位，仅作选片参考。</p>
+                </div>
+                <a class="more" href="#ranking">查看榜单 →</a>
+            </div>
+            <div class="movie-grid">
+                <article class="movie-card">
+                    <div class="movie-cover cover-1">剧情<span class="badge">电影</span><span class="score">推荐</span></div>
+                    <div class="movie-body">
+                        <h3>现实题材剧情片</h3>
+                        <p class="info">中国大陆 · 剧情 / 家庭</p>
+                        <div class="tags"><span>情感</span><span>写实</span><span>长镜头</span></div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="movie-cover cover-2">悬疑<span class="badge">剧集</span><span class="score">热播</span></div>
+                    <div class="movie-body">
+                        <h3>都市悬疑推理剧</h3>
+                        <p class="info">中国大陆 · 悬疑 / 犯罪</p>
+                        <div class="tags"><span>推理</span><span>群像</span><span>反转</span></div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="movie-cover cover-3">动画<span class="badge">动漫</span><span class="score">更新中</span></div>
+                    <div class="movie-body">
+                        <h3>国产长篇动画</h3>
+                        <p class="info">中国大陆 · 奇幻 / 冒险</p>
+                        <div class="tags"><span>国漫</span><span>热血</span><span>周更</span></div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="movie-cover cover-4">纪录<span class="badge">纪录片</span><span class="score">高分</span></div>
+                    <div class="movie-body">
+                        <h3>自然生态纪录片</h3>
+                        <p class="info">英国 · 自然 / 科普</p>
+                        <div class="tags"><span>自然</span><span>科普</span><span>高清</span></div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="movie-cover cover-5">科幻<span class="badge">电影</span><span class="score">推荐</span></div>
+                    <div class="movie-body">
+                        <h3>硬科幻太空题材</h3>
+                        <p class="info">美国 · 科幻 / 冒险</p>
+                        <div class="tags"><span>太空</span><span>视效</span><span>思辨</span></div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="movie-cover cover-6">综艺<span class="badge">综艺</span><span class="score">热播</span></div>
+                    <div class="movie-body">
+                        <h3>旅行生活类慢综艺</h3>
+                        <p class="info">中国大陆 · 真人秀 / 旅行</p>
+                        <div class="tags"><span>治愈</span><span>慢节奏</span><span>风景</span></div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="movie-cover cover-7">历史<span class="badge">剧集</span><span class="score">口碑</span></div>
+                    <div class="movie-body">
+                        <h3>历史正剧长剧</h3>
+                        <p class="info">中国大陆 · 历史 / 传记</p>
+                        <div class="tags"><span>历史</span><span>群像</span><span>考据</span></div>
+                    </div>
+                </article>
+                <article class="movie-card">
+                    <div class="movie-cover cover-8">喜剧<span class="badge">电影</span><span class="score">轻松</span></div>
+                    <div class="movie-body">
+                        <h3>合家欢喜剧片</h3>
+                        <p class="info">中国大陆 · 喜剧 / 家庭</p>
+                        <div class="tags"><span>轻松</span><span>合家欢</span><span>解压</span></div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 更新 + 榜单 -->
+    <section class="section" id="updates">
+        <div class="wrap two-col">
+            <div>
+                <div class="section-head">
+                    <div>
+                        <h2>最近<span>更新</span></h2>
+                        <p class="desc">按更新节奏整理的剧集与番剧动态，方便追更用户查看进度。</p>
+                    </div>
+                </div>
+                <ul class="update-list">
+                    <li>
+                        <span class="ep">更新至 12 集</span>
+                        <span class="u-name">都市悬疑推理剧</span>
+                        <span class="u-type">电视剧</span>
+                        <span class="u-time">今日</span>
+                    </li>
+                    <li>
+                        <span class="ep">更新至 08 集</span>
+                        <span class="u-name">国产长篇动画</span>
+                        <span class="u-type">动漫</span>
+                        <span class="u-time">今日</span>
+                    </li>
+                    <li>
+                        <span class="ep">更新至 05 期</span>
+                        <span class="u-name">旅行生活类慢综艺</span>
+                        <span class="u-type">综艺</span>
+                        <span class="u-time">昨日</span>
+                    </li>
+                    <li>
+                        <span class="ep">更新至 24 集</span>
+                        <span class="u-name">历史正剧长剧</span>
+                        <span class="u-type">电视剧</span>
+                        <span class="u-time">昨日</span>
+                    </li>
+                    <li>
+                        <span class="ep">更新至 16 集</span>
+                        <span class="u-name">海外季播剧集</span>
+                        <span class="u-type">电视剧</span>
+                        <span class="u-time">2 天前</span>
+                    </li>
+                    <li>
+                        <span class="ep">更新至 03 集</span>
+                        <span class="u-name">自然生态纪录片</span>
+                        <span class="u-type">纪录片</span>
+                        <span class="u-time">3 天前</span>
+                    </li>
+                </ul>
+            </div>
+            <aside class="rank-panel" id="ranking">
+                <h3>口碑榜单参考</h3>
+                <p class="sub">综合题材完成度、观众讨论与长期评价整理的参考排序。</p>
+                <ul>
+                    <li><span class="no">01</span><span class="r-name">现实题材剧情片</span><span class="r-heat">剧情</span></li>
+                    <li><span class="no">02</span><span class="r-name">自然生态纪录片</span><span class="r-heat">纪录片</span></li>
+                    <li><span class="no">03</span><span class="r-name">历史正剧长剧</span><span class="r-heat">电视剧</span></li>
+                    <li><span class="no">04</span><span class="r-name">硬科幻太空题材</span><span class="r-heat">电影</span></li>
+                    <li><span class="no">05</span><span class="r-name">都市悬疑推理剧</span><span class="r-heat">电视剧</span></li>
+                    <li><span class="no">06</span><span class="r-name">国产长篇动画</span><span class="r-heat">动漫</span></li>
+                    <li><span class="no">07</span><span class="r-name">旅行生活类慢综艺</span><span class="r-heat">综艺</span></li>
+                    <li><span class="no">08</span><span class="r-name">合家欢喜剧片</span><span class="r-heat">电影</span></li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- 观影指南 -->
+    <section class="section" id="guide">
+        <div class="wrap">
+            <div class="section-head">
+                <div>
+                    <h2>观影<span>指南</span></h2>
+                    <p class="desc">从选片到观看习惯，几个能明显提升体验的实用建议。</p>
+                </div>
+            </div>
+            <div class="guide-grid">
+                <article class="guide-item">
+                    <h3><span class="n">1</span>先定类型，再定片长</h3>
+                    <p>时间有限时先按类型筛选，再根据可支配时长选择电影或剧集。单次 90 至 120 分钟适合电影，碎片时间更适合单集 20 至 45 分钟的剧集或番剧。</p>
+                </article>
+                <article class="guide-item">
+                    <h3><span class="n">2</span>关注更新节奏</h3>
+                    <p>追更类内容建议先确认更新频率和总集数，避免中途弃剧。周更内容适合搭配一部已完结的作品交替观看，减少等待感。</p>
+                </article>
+                <article class="guide-item">
+                    <h3><span class="n">3</span>多看简介与标签</h3>
+                    <p>标签比片名更能反映内容基调。悬疑、犯罪类通常节奏偏紧，家庭、治愈类更适合放松时段，先看标签可以显著降低选错概率。</p>
+                </article>
+                <article class="guide-item">
+                    <h3><span class="n">4</span>理性看待评分</h3>
+                    <p>评分反映的是群体平均偏好，不代表个人口味。建议把评分作为参考区间，同时留意评价中提到的具体优缺点，再决定是否观看。</p>
+                </article>
+                <article class="guide-item">
+                    <h3><span class="n">5</span>注意观看环境</h3>
+                    <p>纪录片与视效类影片更适合大屏和安静环境；轻喜剧与综艺则适合在通勤或休息时观看。合适的设备会明显影响观感。</p>
+                </article>
+                <article class="guide-item">
+                    <h3><span class="n">6</span>合理安排时间</h3>
+                    <p>连续追剧容易造成作息紊乱，建议设定单日观看上限。把追更安排在固定时段，比随时打开更容易保持稳定节奏。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 内容说明 -->
+    <section class="section">
+        <div class="wrap">
+            <div class="intro-block">
+                <h2>关于<span>瓜子影视</span>这个页面</h2>
+                <p>
+                    瓜子影视在这里承担的是一份「影视内容索引」的角色：它不生产内容，也不替观众做决定，而是把分散的影片信息按频道、类型、地区和更新状态重新组织，
+                    降低从「想看点什么」到「确定看什么」之间的决策成本。对经常在多个平台之间来回切换的用户来说，这种集中式的分类整理更省时间。
+                </p>
+                <p>
+                    页面中的推荐位与榜单仅表示在题材、讨论度和长期评价上的相对关注程度，属于参考信息，并非绝对质量排序。不同观众对节奏、题材和表演风格的偏好差异很大，
+                    同一部作品在不同人眼中的评价可能完全不同，因此建议结合简介、标签和自己的观看习惯综合判断。
+                </p>
+                <p>
+                    影视内容的版权归属与播放渠道由各出品方和平台决定，本页面不提供播放服务，也不存储任何视频文件。观看时请通过正规渠道获取内容，
+                    并留意所在地区对影视作品的相关规定与分级提示。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="section" id="faq">
+        <div class="wrap">
+            <div class="section-head">
+                <div>
+                    <h2>常见<span>问题</span></h2>
+                    <p class="desc">关于影视分类、选片和观看方式，观众最常提出的几个疑问。</p>
+                </div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-q" type="button">
+                        瓜子影视可以直接在线播放影片吗？
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>本页面是影视内容的分类导航与信息整理页面，本身不提供视频播放、下载或存储服务。观看影片请通过拥有合法授权的正规平台进行。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" type="button">
+                        榜单上的排序是官方排名吗？
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>不是。榜单是页面根据题材完成度、观众讨论热度和长期评价整理的参考顺序，用于帮助快速浏览，不代表任何机构或平台的官方排名。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" type="button">
+                        怎么快速判断一部剧是否适合自己？
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>可以先看类型标签和简介，再确认单集时长与总集数。如果题材、节奏和时长都符合你当下的观看条件，试看一到两集通常就能判断是否继续。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" type="button">
+                        页面上的更新信息多久整理一次？
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>更新状态以各内容方公布的播出节奏为准，页面会尽量保持整理同步。由于不同平台排播可能调整，具体集数与时间请以实际播出情况为准。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" type="button">
+                        纪录片和综艺适合什么场景观看？
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>纪录片信息密度较高，适合安静环境和较完整的时段；综艺节奏轻松、单期独立性强，更适合在休息、通勤或做家务时作为背景内容观看。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" type="button">
+                        为什么同一部作品的口碑差异很大？
+                        <span class="arrow">▼</span>
+                    </button>
+                    <div class="faq-a">
+                        <p>观众对节奏、题材、表演和结局处理的偏好差异很大，加上观看预期不同，评价自然会出现分化。参考多方观点并结合自己的偏好，比只看单一分数更可靠。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a class="logo" href="#top">
+                    <span class="logo-mark">瓜</span>
+                    <span>瓜子<em>影视</em></span>
+                </a>
+                <p>影视资源分类导航与观影信息整理页面，按频道、类型、地区与更新状态组织内容，帮助观众更快确定观看目标。</p>
+            </div>
+            <div class="footer-col">
+                <h4>内容频道</h4>
+                <ul>
+                    <li><a href="#channels">电影频道</a></li>
+                    <li><a href="#channels">电视剧频道</a></li>
+                    <li><a href="#channels">综艺频道</a></li>
+                    <li><a href="#channels">动漫频道</a></li>
+                    <li><a href="#channels">纪录片频道</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>浏览入口</h4>
+                <ul>
+                    <li><a href="#recommend">热门推荐</a></li>
+                    <li><a href="#updates">最近更新</a></li>
+                    <li><a href="#ranking">口碑榜单</a></li>
+                    <li><a href="#guide">观影指南</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>使用帮助</h4>
+                <ul>
+                    <li><a href="#faq">常见问题</a></li>
+                    <li><a href="#guide">选片建议</a></li>
+                    <li><a href="#top">回到顶部</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 瓜子影视 · 影视分类导航与观影信息整理</span>
+            <span class="tip">本页面不提供播放与下载服务，内容版权归各出品方及授权平台所有。</span>
+        </div>
+    </div>
+</footer>
+
+<script>
+(function () {
+    var toggle = document.getElementById('menuToggle');
+    var nav = document.getElementById('mainNav');
+    if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+            nav.classList.toggle('show');
+        });
+        nav.addEventListener('click', function (e) {
+            if (e.target.tagName === 'A' && window.innerWidth <= 768) {
+                nav.classList.remove('show');
+            }
+        });
+    }
+
+    var items = document.querySelectorAll('.faq-item');
+    items.forEach(function (item) {
+        var btn = item.querySelector('.faq-q');
+        var panel = item.querySelector('.faq-a');
+        if (!btn || !panel) return;
+        btn.addEventListener('click', function () {
+            var isOpen = item.classList.contains('open');
+            items.forEach(function (other) {
+                other.classList.remove('open');
+                var op = other.querySelector('.faq-a');
+                if (op) op.style.maxHeight = null;
+            });
+            if (!isOpen) {
+                item.classList.add('open');
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+            }
+        });
+    });
+
+    var navLinks = document.querySelectorAll('.main-nav a');
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            navLinks.forEach(function (l) { l.classList.remove('active'); });
+            link.classList.add('active');
+        });
+    });
+})();
+</script>
+
+</body>
+                          </html>
