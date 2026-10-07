@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>国产在线观看-国产剧集与综艺在线观看指南</title>
+<meta name="description" content="国产在线观看指南，整理国产电视剧、网络剧、综艺、纪录片等内容的在线观看方式、平台选择、画质与更新规律，帮助你更高效地找到想看的国产内容。">
+<meta name="keywords" content="国产在线观看,国产剧在线观看,国产综艺,国产纪录片,在线观看平台,追剧指南">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --ink: #1c1f26;
+        --ink-soft: #4a5160;
+        --ink-mute: #7b8394;
+        --line: #e6e9f0;
+        --bg: #f6f7fb;
+        --card: #ffffff;
+        --brand: #c8321f;
+        --brand-deep: #9c2416;
+        --brand-soft: #fdf0ed;
+        --gold: #b8860b;
+        --radius: 14px;
+        --shadow: 0 6px 24px rgba(28, 31, 38, 0.07);
+    }
+
+    body {
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .wrap {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    /* ---------- 顶部 ---------- */
+    .site-header {
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        height: 68px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+
+    .logo-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: linear-gradient(135deg, var(--brand), #e2603f);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .logo small {
+        display: block;
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--ink-mute);
+        letter-spacing: 1px;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+
+    .main-nav a {
+        font-size: 15px;
+        color: var(--ink-soft);
+        padding: 8px 14px;
+        border-radius: 8px;
+        transition: background 0.2s, color 0.2s;
+    }
+
+    .main-nav a:hover {
+        background: var(--brand-soft);
+        color: var(--brand-deep);
+    }
+
+    .header-tag {
+        font-size: 13px;
+        color: var(--brand-deep);
+        background: var(--brand-soft);
+        border: 1px solid #f6d5cf;
+        padding: 6px 12px;
+        border-radius: 999px;
+        white-space: nowrap;
+    }
+
+    /* ---------- 首屏 ---------- */
+    .hero {
+        background: linear-gradient(160deg, #221a19 0%, #3a2320 55%, #5a2c22 100%);
+        color: #fff;
+        padding: 58px 0 54px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::after {
+        content: "";
+        position: absolute;
+        right: -120px;
+        top: -120px;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(200, 50, 31, 0.45), transparent 68%);
+    }
+
+    .hero-inner {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: 48px;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        line-height: 1.3;
+        font-weight: 800;
+        letter-spacing: 1px;
+        margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+        color: #ffb8a5;
+    }
+
+    .hero p {
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.82);
+        max-width: 560px;
+        margin-bottom: 26px;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 12px 26px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+        cursor: pointer;
+        border: none;
+    }
+
+    .btn-primary {
+        background: var(--brand);
+        color: #fff;
+        box-shadow: 0 8px 20px rgba(200, 50, 31, 0.35);
+    }
+
+    .btn-primary:hover {
+        background: #db3a25;
+        transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+    }
+
+    .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .hero-panel {
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        border-radius: var(--radius);
+        padding: 22px;
+        backdrop-filter: blur(6px);
+    }
+
+    .hero-panel h2 {
+        font-size: 15px;
+        font-weight: 600;
+        color: #ffd0c4;
+        margin-bottom: 16px;
+        letter-spacing: 0.5px;
+    }
+
+    .hero-list {
+        list-style: none;
+        display: grid;
+        gap: 12px;
+    }
+
+    .hero-list li {
+        display: flex;
+        gap: 12px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.86);
+    }
+
+    .hero-list b {
+        flex: none;
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.16);
+        color: #ffd0c4;
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+    }
+
+    /* ---------- 通用区块 ---------- */
+    .section {
+        padding: 52px 0;
+    }
+
+    .section-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 26px;
+        flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        position: relative;
+        padding-left: 14px;
+    }
+
+    .section-head h2::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 6px;
+        bottom: 6px;
+        width: 4px;
+        border-radius: 3px;
+        background: var(--brand);
+    }
+
+    .section-head p {
+        font-size: 14px;
+        color: var(--ink-mute);
+        max-width: 560px;
+    }
+
+    /* ---------- 分类导航 ---------- */
+    .cat-strip {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px;
+    }
+
+    .cat-item {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 18px 14px;
+        text-align: center;
+        transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+    }
+
+    .cat-item:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+        border-color: #f0c8c0;
+    }
+
+    .cat-item .emoji {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .cat-item strong {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 4px;
+    }
+
+    .cat-item span {
+        font-size: 12px;
+        color: var(--ink-mute);
+    }
+
+    /* ---------- 推荐内容 ---------- */
+    .pick-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .pick-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.18s, box-shadow 0.18s;
+    }
+
+    .pick-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+    }
+
+    .pick-thumb {
+        height: 132px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: #fff;
+        letter-spacing: 2px;
+        font-weight: 800;
+    }
+
+    .t1 { background: linear-gradient(135deg, #b0341f, #e0714f); }
+    .t2 { background: linear-gradient(135deg, #2f4a76, #5a7bb0); }
+    .t3 { background: linear-gradient(135deg, #3d6b4a, #6da37c); }
+    .t4 { background: linear-gradient(135deg, #6a4a86, #9d7ab8); }
+    .t5 { background: linear-gradient(135deg, #8a6a1f, #c9a24a); }
+    .t6 { background: linear-gradient(135deg, #3a5560, #6b8b98); }
+
+    .pick-body {
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+    }
+
+    .pick-body h3 {
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .pick-body p {
+        font-size: 14px;
+        color: var(--ink-soft);
+        flex: 1;
+    }
+
+    .tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .tag {
+        font-size: 12px;
+        color: var(--brand-deep);
+        background: var(--brand-soft);
+        padding: 3px 10px;
+        border-radius: 999px;
+    }
+
+    .tag.gray {
+        color: var(--ink-mute);
+        background: #f1f3f8;
+    }
+
+    /* ---------- 更新表 ---------- */
+    .update-wrap {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        overflow: hidden;
+    }
+
+    .update-row {
+        display: grid;
+        grid-template-columns: 90px 1.6fr 1fr 1fr 100px;
+        gap: 16px;
+        align-items: center;
+        padding: 15px 22px;
+        border-bottom: 1px solid var(--line);
+        font-size: 14px;
+    }
+
+    .update-row:last-child {
+        border-bottom: none;
+    }
+
+    .update-row.head {
+        background: #fafbfe;
+        font-size: 13px;
+        color: var(--ink-mute);
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .update-row .name {
+        font-weight: 600;
+        color: var(--ink);
+    }
+
+    .update-row .muted {
+        color: var(--ink-mute);
+    }
+
+    .badge {
+        font-size: 12px;
+        padding: 3px 9px;
+        border-radius: 6px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .badge.hot {
+        background: #fdeceb;
+        color: #c8321f;
+    }
+
+    .badge.new {
+        background: #e9f4ec;
+        color: #2f7a48;
+    }
+
+    .badge.wait {
+        background: #f1f3f8;
+        color: #6b7280;
+    }
+
+    /* ---------- 指南 ---------- */
+    .guide-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+
+    .guide-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--brand);
+        border-radius: 10px;
+        padding: 22px 24px;
+    }
+
+    .guide-card h3 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .guide-card p {
+        font-size: 14px;
+        color: var(--ink-soft);
+    }
+
+    .guide-card ul {
+        margin-top: 10px;
+        padding-left: 18px;
+        font-size: 14px;
+        color: var(--ink-soft);
+    }
+
+    .guide-card li {
+        margin-bottom: 6px;
+    }
+
+    /* ---------- 侧栏 + 正文 ---------- */
+    .split {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 34px;
+        align-items: start;
+    }
+
+    .article-block {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 30px 32px;
+    }
+
+    .article-block h2 {
+        font-size: 22px;
+        margin-bottom: 14px;
+    }
+
+    .article-block h3 {
+        font-size: 17px;
+        margin: 22px 0 8px;
+    }
+
+    .article-block p {
+        font-size: 15px;
+        color: var(--ink-soft);
+        margin-bottom: 12px;
+    }
+
+    .article-block ul {
+        padding-left: 20px;
+        font-size: 15px;
+        color: var(--ink-soft);
+        margin-bottom: 12px;
+    }
+
+    .article-block li {
+        margin-bottom: 6px;
+    }
+
+    .aside-card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        margin-bottom: 20px;
+    }
+
+    .aside-card h3 {
+        font-size: 16px;
+        margin-bottom: 14px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid var(--line);
+    }
+
+    .rank-list {
+        list-style: none;
+        counter-reset: rk;
+    }
+
+    .rank-list li {
+        counter-increment: rk;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 9px 0;
+        font-size: 14px;
+        color: var(--ink-soft);
+        border-bottom: 1px dashed var(--line);
+    }
+
+    .rank-list li:last-child {
+        border-bottom: none;
+    }
+
+    .rank-list li::before {
+        content: counter(rk);
+        flex: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        background: #f1f3f8;
+        color: var(--ink-mute);
+        font-size: 12px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3px;
+    }
+
+    .rank-list li:nth-child(1)::before {
+        background: var(--brand);
+        color: #fff;
+    }
+
+    .rank-list li:nth-child(2)::before {
+        background: #e0714f;
+        color: #fff;
+    }
+
+    .rank-list li:nth-child(3)::before {
+        background: #c9a24a;
+        color: #fff;
+    }
+
+    .tip-list {
+        list-style: none;
+        font-size: 14px;
+        color: var(--ink-soft);
+    }
+
+    .tip-list li {
+        padding: 8px 0 8px 18px;
+        position: relative;
+    }
+
+    .tip-list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 16px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--brand);
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-list {
+        display: grid;
+        gap: 14px;
+    }
+
+    .faq-item {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        padding: 20px 24px;
+    }
+
+    .faq-item h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: var(--ink);
+    }
+
+    .faq-item p {
+        font-size: 14px;
+        color: var(--ink-soft);
+    }
+
+    /* ---------- 页脚 ---------- */
+    .site-footer {
+        background: #1b1e25;
+        color: rgba(255, 255, 255, 0.7);
+        padding: 44px 0 26px;
+        margin-top: 20px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    .footer-grid h4 {
+        color: #fff;
+        font-size: 15px;
+        margin-bottom: 14px;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.62);
+        line-height: 2;
+        display: block;
+    }
+
+    .footer-grid a:hover {
+        color: #ffb8a5;
+    }
+
+    .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding-top: 20px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.45);
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    /* ---------- 响应式 ---------- */
+    @media (max-width: 1024px) {
+        .hero-inner {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .cat-strip {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .pick-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .split {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 760px) {
+        .header-inner {
+            height: auto;
+            padding: 12px 0;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .main-nav {
+            gap: 2px;
+        }
+
+        .main-nav a {
+            padding: 6px 10px;
+            font-size: 14px;
+        }
+
+        .header-tag {
+            display: none;
+        }
+
+        .hero {
+            padding: 40px 0 38px;
+        }
+
+        .hero h1 {
+            font-size: 27px;
+        }
+
+        .section {
+            padding: 38px 0;
+        }
+
+        .cat-strip {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .pick-grid,
+        .guide-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .update-row {
+            grid-template-columns: 1fr 1fr;
+            gap: 8px 14px;
+            padding: 14px 16px;
+        }
+
+        .update-row.head {
+            display: none;
+        }
+
+        .update-row .name {
+            grid-column: 1 / -1;
+        }
+
+        .article-block {
+            padding: 22px 18px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="wrap header-inner">
+        <div class="logo">
+            <span class="logo-mark">国</span>
+            <span>
+                国剧在线观看
+                <small>国产内容观看指引</small>
+            </span>
+        </div>
+        <nav class="main-nav">
+            <a href="#categories">内容分类</a>
+            <a href="#picks">编辑推荐</a>
+            <a href="#updates">更新动态</a>
+            <a href="#guide">观看指南</a>
+            <a href="#faq">常见问题</a>
+        </nav>
+        <span class="header-tag">按需选择 · 理性追剧</span>
+    </div>
+</header>
+
+<main>
+
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="wrap hero-inner">
+            <div>
+                <h1>国产在线观看：<span>把想看的国产内容找对、看顺</span></h1>
+                <p>国产电视剧、网络剧、综艺、纪录片、动画等内容的线上观看渠道越来越多，同一部作品可能分布在不同平台，更新节奏、清晰度和观看权限也各不相同。本页从内容分类、平台选择、观看习惯和常见问题几个角度，梳理一份实用的国产在线观看参考。</p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#categories">按分类浏览</a>
+                    <a class="btn btn-ghost" href="#guide">查看观看指南</a>
+                </div>
+            </div>
+            <aside class="hero-panel">
+                <h2>观看前先想清楚三件事</h2>
+                <ul class="hero-list">
+                    <li><b>1</b><span>想看的是长剧、短剧还是综艺，类型决定平台选择方向。</span></li>
+                    <li><b>2</b><span>是否接受会员付费、是否需要在电视端观看，影响实际体验。</span></li>
+                    <li><b>3</b><span>更新频率与完结状态，决定是追更还是等完结后一次看完。</span></li>
+                </ul>
+            </aside>
+        </div>
+    </section>
+
+    <!-- 分类 -->
+    <section class="section" id="categories">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>国产内容分类</h2>
+                <p>国产在线观看的内容大致可以分为以下几类，不同类别的观看节奏和选择标准并不相同。</p>
+            </div>
+            <div class="cat-strip">
+                <a class="cat-item" href="#picks">
+                    <div class="emoji">📺</div>
+                    <strong>国产电视剧</strong>
+                    <span>上星剧 · 台网联动</span>
+                </a>
+                <a class="cat-item" href="#picks">
+                    <div class="emoji">🎬</div>
+                    <strong>网络剧</strong>
+                    <span>短剧 · 分账剧</span>
+                </a>
+                <a class="cat-item" href="#picks">
+                    <div class="emoji">🎤</div>
+                    <strong>综艺节目</strong>
+                    <span>季播 · 周更</span>
+                </a>
+                <a class="cat-item" href="#picks">
+                    <div class="emoji">📖</div>
+                    <strong>纪录片</strong>
+                    <span>人文 · 自然 · 历史</span>
+                </a>
+                <a class="cat-item" href="#picks">
+                    <div class="emoji">🧸</div>
+                    <strong>国产动画</strong>
+                    <span>少儿 · 国漫</span>
+                </a>
+                <a class="cat-item" href="#picks">
+                    <div class="emoji">🎭</div>
+                    <strong>文化节目</strong>
+                    <span>戏曲 · 晚会 · 专题</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 编辑推荐 -->
+    <section class="section" id="picks">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>按需求挑选的观看方向</h2>
+                <p>与其漫无目的地翻列表，不如先确定自己的观看场景，再决定看什么、在哪看。</p>
+            </div>
+            <div class="pick-grid">
+                <article class="pick-card">
+                    <div class="pick-thumb t1">长剧</div>
+                    <div class="pick-body">
+                        <h3>适合连续追更的长篇剧集</h3>
+                        <p>集数较多、人物关系复杂，适合每天固定时间看一两集。观看前建议确认更新周期，避免追到一半断更影响体验。</p>
+                        <div class="tags">
+                            <span class="tag">剧情向</span>
+                            <span class="tag gray">长期追更</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="pick-card">
+                    <div class="pick-thumb t2">短剧</div>
+                    <div class="pick-body">
+                        <h3>节奏紧凑的短篇与微短剧</h3>
+                        <p>单集时长较短，适合通勤、午休等碎片时间。挑选时重点看题材是否对胃口，而不是单纯追求集数多。</p>
+                        <div class="tags">
+                            <span class="tag">碎片时间</span>
+                            <span class="tag gray">轻量观看</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="pick-card">
+                    <div class="pick-thumb t3">综艺</div>
+                    <div class="pick-body">
+                        <h3>轻松解压的综艺内容</h3>
+                        <p>多数综艺按周更新，适合边做家务边看。选综艺可以先看节目定位，是竞技、慢生活还是访谈，差别很大。</p>
+                        <div class="tags">
+                            <span class="tag">轻松</span>
+                            <span class="tag gray">周更</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="pick-card">
+                    <div class="pick-thumb t4">纪录片</div>
+                    <div class="pick-body">
+                        <h3>适合安静观看的纪录片</h3>
+                        <p>人文、自然、历史类纪录片通常画质要求较高，建议在屏幕较大的设备上观看，观感差别明显。</p>
+                        <div class="tags">
+                            <span class="tag">高画质</span>
+                            <span class="tag gray">沉浸观看</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="pick-card">
+                    <div class="pick-thumb t5">国漫</div>
+                    <div class="pick-body">
+                        <h3>国产动画与少儿内容</h3>
+                        <p>动画内容对配音版本、清晰度比较敏感，给孩子观看时更要注意内容适龄与观看时长管理。</p>
+                        <div class="tags">
+                            <span class="tag">亲子</span>
+                            <span class="tag gray">适龄选择</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="pick-card">
+                    <div class="pick-thumb t6">文化</div>
+                    <div class="pick-body">
+                        <h3>文化类与专题节目</h3>
+                        <p>戏曲、晚会、人物专题等内容的播出时间相对集中，错过直播后往往可以在平台回看，注意回看期限。</p>
+                        <div class="tags">
+                            <span class="tag">专题</span>
+                            <span class="tag gray">回看</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 更新动态 -->
+    <section class="section" id="updates">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>观看状态参考</h2>
+                <p>下表用于说明常见的更新状态含义，帮助你判断一部内容现在是否适合开始观看。</p>
+            </div>
+            <div class="update-wrap">
+                <div class="update-row head">
+                    <span>状态</span>
+                    <span>含义</span>
+                    <span>适合人群</span>
+                    <span>观看建议</span>
+                    <span>备注</span>
+                </div>
+                <div class="update-row">
+                    <span class="badge hot">热播中</span>
+                    <span class="name">正在按周期更新</span>
+                    <span class="muted">喜欢追更讨论</span>
+                    <span class="muted">按更新日观看</span>
+                    <span class="muted">注意断更通知</span>
+                </div>
+                <div class="update-row">
+                    <span class="badge new">已完结</span>
+                    <span class="name">全部内容已放出</span>
+                    <span class="muted">偏好一次看完</span>
+                    <span class="muted">可连续观看</span>
+                    <span class="muted">适合假期</span>
+                </div>
+                <div class="update-row">
+                    <span class="badge wait">待播出</span>
+                    <span class="name">已公布但尚未上线</span>
+                    <span class="muted">关注题材与阵容</span>
+                    <span class="muted">先加入片单</span>
+                    <span class="muted">播出时间可能调整</span>
+                </div>
+                <div class="update-row">
+                    <span class="badge wait">限时回看</span>
+                    <span class="name">直播后短期开放回看</span>
+                    <span class="muted">错过直播的观众</span>
+                    <span class="muted">尽早观看</span>
+                    <span class="muted">过期后可能下架</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 观看指南 -->
+    <section class="section" id="guide">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>国产在线观看实用指南</h2>
+                <p>从平台选择到观看习惯，几个能明显提升体验的要点。</p>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <h3>先确认内容在哪个平台</h3>
+                    <p>国产内容的版权通常分散在多家平台，同一部剧可能只在特定平台上线。搜索时优先使用官方渠道确认，避免点进来源不明的页面。</p>
+                    <ul>
+                        <li>用作品全名加“官方”确认播出平台</li>
+                        <li>留意是否为独播、联播或分平台播出</li>
+                        <li>电视端与手机端的内容库可能不完全一致</li>
+                    </ul>
+                </div>
+                <div class="guide-card">
+                    <h3>画质与设备要匹配</h3>
+                    <p>清晰度选项受网络带宽和设备性能影响，盲目选择最高画质反而可能造成卡顿。根据实际网络情况选择合适档位更稳妥。</p>
+                    <ul>
+                        <li>手机观看选择中高画质通常已足够</li>
+                        <li>大屏电视建议在网络稳定时使用高清档</li>
+                        <li>流量环境下注意清晰度与流量消耗</li>
+                    </ul>
+                </div>
+                <div class="guide-card">
+                    <h3>合理安排追更节奏</h3>
+                    <p>追更容易打乱作息，尤其是晚间更新的内容。可以设定固定的观看时间，或者等完结后集中观看，减少等待带来的焦虑感。</p>
+                    <ul>
+                        <li>为追剧设定时间上限</li>
+                        <li>优先选择已完结内容一次看完</li>
+                        <li>避免在睡前连续观看过多集数</li>
+                    </ul>
+                </div>
+                <div class="guide-card">
+                    <h3>注意账号与付费安全</h3>
+                    <p>涉及会员、付费点播时，应通过平台官方入口操作。不要轻信所谓“免费看全集”的第三方页面，这类页面往往存在风险。</p>
+                    <ul>
+                        <li>只在官方应用或网站内完成支付</li>
+                        <li>不向他人出借账号或验证码</li>
+                        <li>定期检查订阅状态，避免自动续费遗忘</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 正文 + 侧栏 -->
+    <section class="section">
+        <div class="wrap split">
+            <article class="article-block">
+                <h2>国产在线观看，怎么选更省心</h2>
+                <p>“国产在线观看”这个说法，背后其实包含了很多不同的需求：有人想找一部下饭的国产剧，有人想给孩子挑一部合适的动画，也有人只是想看看最近有什么值得关注的新节目。需求不同，判断标准自然也不一样。</p>
+
+                <h3>从内容类型出发</h3>
+                <p>国产电视剧和网络剧的差别，不只是播出渠道，还包括集数、节奏和题材取向。台网联动的剧集往往集数较多、叙事较完整；网络剧和微短剧则更偏向节奏快、单集短。综艺和纪录片属于另一种观看逻辑，前者适合放松，后者更适合安静投入。</p>
+                <p>明确自己想看的类型，比单纯浏览热门榜单更有效率。热门不等于适合，尤其是当你的观看时间有限时。</p>
+
+                <h3>从观看场景出发</h3>
+                <p>通勤路上适合单集短、剧情独立的内容；在家用大屏观看时，画质和音效更值得关注；和家人一起看，则要考虑题材是否适合共同观看。把场景想清楚，选择范围会立刻缩小。</p>
+
+                <h3>从更新状态出发</h3>
+                <p>追更和补完是两种完全不同的体验。追更需要接受等待和剧情悬念，补完则更自由。如果你不希望被更新节奏牵着走，优先选择已完结的作品会更舒服。</p>
+
+                <h3>保持基本的观看理性</h3>
+                <p>国产内容数量庞大，质量参差是正常现象。与其追求“全都看完”，不如按自己的兴趣和时间做取舍。遇到来源不明、要求额外下载或输入敏感信息的页面，直接退出是更安全的选择。</p>
+            </article>
+
+            <aside>
+                <div class="aside-card">
+                    <h3>观看前检查清单</h3>
+                    <ul class="tip-list">
+                        <li>确认作品全名与播出年份</li>
+                        <li>确认官方播出平台</li>
+                        <li>查看是否已完结</li>
+                        <li>确认设备是否支持该平台</li>
+                        <li>了解会员与付费规则</li>
+                    </ul>
+                </div>
+                <div class="aside-card">
+                    <h3>常见题材方向</h3>
+                    <ol class="rank-list">
+                        <li>现实题材与生活剧</li>
+                        <li>悬疑与推理类剧集</li>
+                        <li>古装与历史题材</li>
+                        <li>都市情感与职场</li>
+                        <li>人文与自然纪录片</li>
+                        <li>少儿动画与合家欢</li>
+                    </ol>
+                </div>
+                <div class="aside-card">
+                    <h3>小提醒</h3>
+                    <p style="font-size:14px;color:var(--ink-soft);">本页为观看方向与选择方法的整理，不提供任何影视资源，也不引导跳转至非官方渠道。具体播出信息请以平台官方页面为准。</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="wrap">
+            <div class="section-head">
+                <h2>常见问题</h2>
+                <p>关于国产在线观看，读者最常问到的几个问题。</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>为什么同一部国产剧在不同平台搜不到？</h3>
+                    <p>影视内容通常按版权分发，独播内容只会出现在授权平台。此外，部分内容在电视端和手机端的上架时间也可能不同，建议以官方渠道的信息为准。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>追更和等完结，哪种方式更好？</h3>
+                    <p>没有绝对优劣。追更能参与讨论、保持新鲜感，但需要接受等待；等完结可以连续观看、节奏自由。可以根据自己的时间安排和耐心程度来选择。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>观看时总是卡顿怎么办？</h3>
+                    <p>可以先降低清晰度档位，检查网络是否稳定，或关闭其他占用带宽的应用。如果是设备性能限制，更换播放设备往往比反复调整设置更有效。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>给孩子挑选国产动画要注意什么？</h3>
+                    <p>优先关注内容是否适龄、配音版本是否合适，并控制单次观看时长。家长陪同观看，既能了解内容，也便于及时沟通。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>如何避免遇到不安全的观看页面？</h3>
+                    <p>坚持从官方应用商店下载应用、从官方入口进入播放页面，不点击来源不明的链接，不随意输入账号密码或验证码，是最基本的防护方式。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div>
+                <h4>国剧在线观看</h4>
+                <p>围绕国产内容的观看方式、平台选择与观看习惯，提供一份清晰、克制的参考指南。</p>
+            </div>
+            <div>
+                <h4>内容分类</h4>
+                <a href="#categories">国产电视剧</a>
+                <a href="#categories">网络剧与短剧</a>
+                <a href="#categories">综艺节目</a>
+                <a href="#categories">纪录片</a>
+            </div>
+            <div>
+                <h4>观看参考</h4>
+                <a href="#updates">更新状态说明</a>
+                <a href="#guide">观看指南</a>
+                <a href="#picks">需求挑选方向</a>
+                <a href="#faq">常见问题</a>
+            </div>
+            <div>
+                <h4>说明</h4>
+                <p>本页不提供影视资源，不参与任何内容分发，具体播出信息请以官方平台为准。</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 国剧在线观看指南 · 内容仅供参考</span>
+            <span>请通过官方渠道观看国产内容</span>
+        </div>
+    </div>
+</footer>
+
+</body>
+  </html>
