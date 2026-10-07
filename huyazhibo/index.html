@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>虎牙直播-游戏直播观看与主播互动平台指南</title>
+<meta name="description" content="虎牙直播是面向游戏与泛娱乐内容的直播平台，提供热门游戏赛事、主播直播、弹幕互动、开播指引与观看技巧等实用信息。">
+<meta name="keywords" content="虎牙直播,游戏直播,弹幕互动,主播开播,电竞赛事,直播平台">
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --orange: #ff7a1a;
+  --orange-deep: #e85d04;
+  --dark: #14161c;
+  --dark-2: #1e212b;
+  --gray: #6b7280;
+  --line: #e8eaef;
+  --bg: #f6f7fb;
+  --white: #ffffff;
+  --radius: 14px;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 顶部条 */
+.topbar {
+  background: var(--dark);
+  color: #c9ccd6;
+  font-size: 13px;
+}
+.topbar .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  gap: 12px;
+}
+.topbar-links {
+  display: flex;
+  gap: 18px;
+}
+.topbar-links a:hover {
+  color: var(--orange);
+}
+
+/* 头部 */
+header.site-header {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: 20px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+.logo-mark {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+}
+.logo span.accent {
+  color: var(--orange-deep);
+}
+nav.main-nav {
+  display: flex;
+  gap: 26px;
+  font-size: 15px;
+  font-weight: 500;
+}
+nav.main-nav a {
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+nav.main-nav a:hover,
+nav.main-nav a.active {
+  color: var(--orange-deep);
+  border-bottom-color: var(--orange);
+}
+.header-cta {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  display: inline-block;
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+  color: #fff;
+}
+.btn-primary:hover {
+  filter: brightness(1.08);
+}
+.btn-ghost {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--dark);
+}
+.btn-ghost:hover {
+  border-color: var(--orange);
+  color: var(--orange-deep);
+}
+
+/* 首屏 */
+.hero {
+  background: radial-gradient(circle at 15% 20%, #2b2f3d 0%, var(--dark) 55%);
+  color: #fff;
+  padding: 56px 0 60px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 44px;
+  align-items: center;
+}
+.hero h1 {
+  font-size: 38px;
+  line-height: 1.3;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--orange);
+}
+.hero p.lead {
+  font-size: 16px;
+  color: #b9bdc9;
+  margin-bottom: 26px;
+  max-width: 560px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 26px;
+}
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.hero-tags span {
+  font-size: 13px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  background: rgba(255, 122, 26, 0.14);
+  color: #ffb27a;
+  border: 1px solid rgba(255, 122, 26, 0.3);
+}
+.hero-panel {
+  background: var(--dark-2);
+  border: 1px solid #2c3040;
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.hero-panel h2 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  color: #fff;
+}
+.hero-panel ul {
+  list-style: none;
+}
+.hero-panel li {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 11px 0;
+  border-bottom: 1px dashed #343a4c;
+  font-size: 14px;
+  color: #c4c8d4;
+}
+.hero-panel li:last-child {
+  border-bottom: none;
+}
+.hero-panel li b {
+  color: var(--orange);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* 通用区块 */
+section.block {
+  padding: 52px 0;
+}
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 26px;
+  flex-wrap: wrap;
+}
+.section-head h2 {
+  font-size: 25px;
+  font-weight: 800;
+}
+.section-head h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--orange-deep));
+  margin-top: 8px;
+}
+.section-head p {
+  color: var(--gray);
+  font-size: 14px;
+  max-width: 560px;
+}
+
+/* 分类卡片 */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.cat-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  transition: 0.22s;
+}
+.cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(20, 22, 28, 0.08);
+  border-color: #ffd0a8;
+}
+.cat-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #fff2e6;
+  color: var(--orange-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.cat-card h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.cat-card p {
+  font-size: 13.5px;
+  color: var(--gray);
+}
+
+/* 热门推荐 */
+.hot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.hot-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.22s;
+}
+.hot-card:hover {
+  box-shadow: 0 14px 30px rgba(20, 22, 28, 0.09);
+  transform: translateY(-4px);
+}
+.hot-cover {
+  height: 132px;
+  background: linear-gradient(135deg, #2b2f3d, #40465c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffb27a;
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+.hot-body {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.hot-body h3 {
+  font-size: 16.5px;
+  margin-bottom: 8px;
+}
+.hot-body p {
+  font-size: 13.5px;
+  color: var(--gray);
+  flex: 1;
+}
+.hot-meta {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.tag {
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #f0f2f7;
+  color: #555c6e;
+}
+.tag.hot {
+  background: #fff2e6;
+  color: var(--orange-deep);
+}
+
+/* 观看指南 */
+.guide-wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.guide-list {
+  list-style: none;
+  counter-reset: g;
+}
+.guide-list li {
+  counter-increment: g;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px 18px 62px;
+  position: relative;
+  margin-bottom: 14px;
+}
+.guide-list li::before {
+  content: counter(g);
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.guide-list h3 {
+  font-size: 15.5px;
+  margin-bottom: 6px;
+}
+.guide-list p {
+  font-size: 13.5px;
+  color: var(--gray);
+}
+.aside-box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.aside-box h3 {
+  font-size: 17px;
+  margin-bottom: 14px;
+}
+.aside-box ul {
+  list-style: none;
+}
+.aside-box li {
+  font-size: 14px;
+  color: #4b5162;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--line);
+  display: flex;
+  gap: 10px;
+}
+.aside-box li:last-child {
+  border-bottom: none;
+}
+.aside-box li i {
+  color: var(--orange-deep);
+  font-style: normal;
+  font-weight: 700;
+}
+.notice {
+  margin-top: 18px;
+  background: #fff8f1;
+  border: 1px solid #ffe0c4;
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  font-size: 13.5px;
+  color: #8a5a22;
+}
+
+/* 开播 */
+.stream {
+  background: var(--dark);
+  color: #fff;
+  border-radius: 20px;
+  padding: 44px 40px;
+}
+.stream h2 {
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.stream > p {
+  color: #b9bdc9;
+  font-size: 14.5px;
+  max-width: 720px;
+  margin-bottom: 28px;
+}
+.stream-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.stream-item {
+  background: var(--dark-2);
+  border: 1px solid #2c3040;
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.stream-item h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: var(--orange);
+}
+.stream-item p {
+  font-size: 13.5px;
+  color: #b9bdc9;
+}
+
+/* 数据/说明 */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+.fact {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  text-align: center;
+}
+.fact strong {
+  display: block;
+  font-size: 20px;
+  color: var(--orange-deep);
+  margin-bottom: 6px;
+}
+.fact span {
+  font-size: 13.5px;
+  color: var(--gray);
+}
+
+/* FAQ */
+.faq-list {
+  max-width: 900px;
+}
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.faq-item summary {
+  cursor: pointer;
+  padding: 17px 22px;
+  font-size: 15.5px;
+  font-weight: 600;
+  list-style: none;
+  position: relative;
+  padding-right: 50px;
+}
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--orange-deep);
+  font-weight: 400;
+}
+.faq-item[open] summary::after {
+  content: "–";
+}
+.faq-item .faq-body {
+  padding: 0 22px 18px;
+  font-size: 14px;
+  color: var(--gray);
+}
+
+/* 页脚 */
+footer.site-footer {
+  background: var(--dark);
+  color: #9aa0b0;
+  padding: 46px 0 24px;
+  margin-top: 20px;
+  font-size: 13.5px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #2a2e3c;
+}
+.footer-grid h4 {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+.footer-grid ul {
+  list-style: none;
+}
+.footer-grid li {
+  padding: 5px 0;
+}
+.footer-grid a:hover {
+  color: var(--orange);
+}
+.footer-brand p {
+  margin-top: 12px;
+  line-height: 1.8;
+  max-width: 320px;
+}
+.footer-bottom {
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: #6f7585;
+}
+
+/* 响应式 */
+@media (max-width: 980px) {
+  .hero-grid,
+  .guide-wrap {
+    grid-template-columns: 1fr;
+  }
+  .cat-grid,
+  .facts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hot-grid,
+  .stream-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 760px) {
+  nav.main-nav {
+    display: none;
+  }
+  .header-cta .btn-ghost {
+    display: none;
+  }
+  .hero h1 {
+    font-size: 27px;
+  }
+  .hot-grid,
+  .stream-grid,
+  .cat-grid,
+  .facts-grid {
+    grid-template-columns: 1fr;
+  }
+  .stream {
+    padding: 30px 22px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .topbar-links {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>虎牙直播 · 游戏与泛娱乐直播内容导航</span>
+    <div class="topbar-links">
+      <a href="#hot">热门推荐</a>
+      <a href="#guide">观看指南</a>
+      <a href="#stream">开播入门</a>
+      <a href="#faq">常见问题</a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top">
+      <span class="logo-mark">虎</span>
+      虎牙<span class="accent">直播</span>
+    </a>
+    <nav class="main-nav">
+      <a class="active" href="#top">首页</a>
+      <a href="#cats">直播分类</a>
+      <a href="#hot">热门内容</a>
+      <a href="#guide">观看指南</a>
+      <a href="#stream">开播入门</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost" href="#guide">新手指南</a>
+      <a class="btn btn-primary" href="#hot">看热门</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>虎牙直播：<em>游戏直播</em>观看与主播互动的实用指南</h1>
+        <p class="lead">
+          虎牙直播是以游戏直播为核心、同时覆盖电竞赛事、娱乐互动、语音聊天等内容的直播平台。
+          无论你是想找一款游戏的直播、追一场赛事，还是准备自己开播，这里整理了观看方式、
+          互动功能、开播流程和常见注意事项，帮助你更快上手。
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#hot">浏览热门内容</a>
+          <a class="btn btn-ghost" href="#stream">了解开播流程</a>
+        </div>
+        <div class="hero-tags">
+          <span>游戏直播</span>
+          <span>电竞赛事</span>
+          <span>弹幕互动</span>
+          <span>主播开播</span>
+          <span>语音开黑</span>
+        </div>
+      </div>
+      <aside class="hero-panel">
+        <h2>快速了解虎牙直播</h2>
+        <ul>
+          <li><b>内容</b>以游戏直播为主，同时包含娱乐、户外、语音等分区</li>
+          <li><b>观看</b>支持网页端与移动端，登录后可发送弹幕、关注主播</li>
+          <li><b>互动</b>弹幕、礼物、粉丝团、连麦等是常见互动形式</li>
+          <li><b>开播</b>通常需要实名认证，并配合推流工具进行直播</li>
+          <li><b>赛事</b>部分热门电竞赛事会提供直播与回放内容</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 直播分类 -->
+  <section class="block" id="cats">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>直播分类导航</h2>
+          <p>不同分区的内容节奏和观看体验差异较大，按兴趣选择会更容易找到想看的直播。</p>
+        </div>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <div class="cat-icon">竞</div>
+          <h3>竞技游戏</h3>
+          <p>MOBA、射击、战术竞技等品类，节奏快、对抗性强，适合关注操作与战术的观众。</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">手</div>
+          <h3>手游专区</h3>
+          <p>移动端游戏直播集中区域，观看门槛低，适合碎片时间随时打开看看。</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">赛</div>
+          <h3>电竞赛事</h3>
+          <p>职业联赛与杯赛的直播、回放与解说内容，适合想系统追赛程的观众。</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">娱</div>
+          <h3>娱乐互动</h3>
+          <p>聊天、才艺、户外等偏互动型内容，氛围轻松，适合边看边聊。</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">音</div>
+          <h3>语音交友</h3>
+          <p>以语音房、连麦为主的社交向内容，强调实时沟通与参与感。</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">单</div>
+          <h3>单机与主机</h3>
+          <p>剧情向、动作向单机作品直播，适合喜欢看完整流程与解说的观众。</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">新</div>
+          <h3>新游尝鲜</h3>
+          <p>新上线或测试阶段游戏的试玩直播，方便在入手前先了解玩法。</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-icon">陪</div>
+          <h3>陪玩与开黑</h3>
+          <p>组队、陪玩类内容，适合想找人一起玩、或观看多人配合的观众。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门推荐 -->
+  <section class="block" id="hot" style="background:#fff;">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>热门内容推荐方向</h2>
+          <p>以下为常见的直播内容类型举例，具体主播与场次会随时间变化，建议以平台实时列表为准。</p>
+        </div>
+      </div>
+      <div class="hot-grid">
+        <article class="hot-card">
+          <div class="hot-cover">竞技对抗</div>
+          <div class="hot-body">
+            <h3>多人竞技类直播</h3>
+            <p>观看重点通常在阵容选择、团战决策与操作细节，适合想提升水平的玩家参考打法思路。</p>
+            <div class="hot-meta">
+              <span class="tag hot">热门</span>
+              <span class="tag">战术</span>
+              <span class="tag">组队</span>
+            </div>
+          </div>
+        </article>
+        <article class="hot-card">
+          <div class="hot-cover">赛事直播</div>
+          <div class="hot-body">
+            <h3>电竞赛事与解说</h3>
+            <p>赛事直播通常配有官方或主播解说，适合关注赛程、战队表现与版本理解的观众。</p>
+            <div class="hot-meta">
+              <span class="tag hot">赛事</span>
+              <span class="tag">解说</span>
+              <span class="tag">回放</span>
+            </div>
+          </div>
+        </article>
+        <article class="hot-card">
+          <div class="hot-cover">轻松互动</div>
+          <div class="hot-body">
+            <h3>娱乐与聊天直播</h3>
+            <p>以聊天、互动、才艺为主，节奏舒缓，适合放松时打开，边看边参与弹幕交流。</p>
+            <div class="hot-meta">
+              <span class="tag">互动</span>
+              <span class="tag">聊天</span>
+              <span class="tag">轻松</span>
+            </div>
+          </div>
+        </article>
+        <article class="hot-card">
+          <div class="hot-cover">新游试玩</div>
+          <div class="hot-body">
+            <h3>新游戏试玩体验</h3>
+            <p>通过主播的实际游玩了解画面、操作手感与玩法节奏，帮助判断是否值得入手。</p>
+            <div class="hot-meta">
+              <span class="tag">新游</span>
+              <span class="tag">试玩</span>
+            </div>
+          </div>
+        </article>
+        <article class="hot-card">
+          <div class="hot-cover">单机剧情</div>
+          <div class="hot-body">
+            <h3>单机与剧情向直播</h3>
+            <p>适合没时间自己通关、又想了解剧情走向的观众，主播的解说会补充不少背景信息。</p>
+            <div class="hot-meta">
+              <span class="tag">剧情</span>
+              <span class="tag">解说</span>
+            </div>
+          </div>
+        </article>
+        <article class="hot-card">
+          <div class="hot-cover">语音社交</div>
+          <div class="hot-body">
+            <h3>语音房与连麦</h3>
+            <p>强调实时交流，参与感强。进入语音房前建议先了解房间规则，保持良好沟通氛围。</p>
+            <div class="hot-meta">
+              <span class="tag">语音</span>
+              <span class="tag">连麦</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 观看指南 -->
+  <section class="block" id="guide">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>观看与互动指南</h2>
+          <p>从找到合适的直播间，到参与弹幕和关注主播，按下面的顺序操作会更顺畅。</p>
+        </div>
+      </div>
+      <div class="guide-wrap">
+        <ol class="guide-list">
+          <li>
+            <h3>先确定想看的内容类型</h3>
+            <p>游戏直播、赛事、娱乐、语音等分区的内容节奏差别很大。先明确目的，再从对应分区进入，比在首页漫无目的地翻更高效。</p>
+          </li>
+          <li>
+            <h3>用搜索和标签缩小范围</h3>
+            <p>直接搜索游戏名或赛事名，通常能更快定位到对应直播间；标签和分类可以用来发现同类型的主播。</p>
+          </li>
+          <li>
+            <h3>进入直播间后先看清晰度与延迟</h3>
+            <p>网络条件不同，适合的画质档位也不同。若出现卡顿，可适当降低清晰度，换取更稳定的观看体验。</p>
+          </li>
+          <li>
+            <h3>登录后参与弹幕与互动</h3>
+            <p>登录账号后可以发送弹幕、关注主播、加入粉丝团。发送内容需遵守平台规范，避免刷屏和不当言论。</p>
+          </li>
+          <li>
+            <h3>关注与订阅常看的主播</h3>
+            <p>关注后更容易在开播时收到提醒，也能在个人页面集中查看自己常看的内容。</p>
+          </li>
+          <li>
+            <h3>合理安排观看时间</h3>
+            <p>直播时段通常集中在晚间，追赛事时注意作息。理性看待打赏与消费，量力而行。</p>
+          </li>
+        </ol>
+        <aside>
+          <div class="aside-box">
+            <h3>观看时值得留意的几点</h3>
+            <ul>
+              <li><i>01</i>优先选择网络稳定的环境，减少卡顿</li>
+              <li><i>02</i>弹幕与评论遵守社区规则，尊重主播和其他观众</li>
+              <li><i>03</i>涉及账号、支付的操作，认准平台官方入口</li>
+              <li><i>04</i>遇到诱导私下交易、索要验证码等情况应提高警惕</li>
+              <li><i>05</i>未满法定年龄的观众应遵守相关使用规定</li>
+            </ul>
+          </div>
+          <div class="notice">
+            提示：直播内容由主播实时产生，具体节目、时段与形式会不断变化。观看时请以平台页面实际展示的信息为准，并对涉及金钱与账号的操作保持谨慎。
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 开播入门 -->
+  <section class="block" id="stream">
+    <div class="wrap">
+      <div class="stream">
+        <h2>想自己开播？先了解基本流程</h2>
+        <p>
+          在虎牙直播开播，通常需要完成账号注册与实名认证，再配置推流工具和直播参数。
+          下面是常见的准备步骤，具体入口与要求请以平台当前的开播指引为准。
+        </p>
+        <div class="stream-grid">
+          <div class="stream-item">
+            <h3>1. 账号与认证</h3>
+            <p>注册并登录账号，按平台要求完成实名认证等必要步骤，这是开通直播权限的前提。</p>
+          </div>
+          <div class="stream-item">
+            <h3>2. 选择直播分区</h3>
+            <p>根据自己要播的游戏或内容选择对应分区，分区选择会影响被观众发现的概率。</p>
+          </div>
+          <div class="stream-item">
+            <h3>3. 配置推流工具</h3>
+            <p>使用平台提供的开播工具或常见推流软件，填入推流地址与密钥，设置分辨率与码率。</p>
+          </div>
+          <div class="stream-item">
+            <h3>4. 测试画面与声音</h3>
+            <p>正式开播前先做一次测试，确认画面不卡、麦克风清晰、没有明显回声或杂音。</p>
+          </div>
+          <div class="stream-item">
+            <h3>5. 设置标题与封面</h3>
+            <p>标题写清楚播什么内容，封面尽量清晰直观，有助于观众快速判断是否感兴趣。</p>
+          </div>
+          <div class="stream-item">
+            <h3>6. 保持稳定与合规</h3>
+            <p>固定开播时段有助于积累观众。直播中需遵守平台规范，避免违规内容与不当言论。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 内容说明 -->
+  <section class="block" style="background:#fff;">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>关于虎牙直播的几个基本认识</h2>
+          <p>了解平台的内容构成与使用方式，有助于更高效地找到想看的内容。</p>
+        </div>
+      </div>
+      <div class="facts-grid">
+        <div class="fact">
+          <strong>游戏为核心</strong>
+          <span>游戏直播是平台的主要内容方向，覆盖多种品类</span>
+        </div>
+        <div class="fact">
+          <strong>多端可用</strong>
+          <span>可通过网页端与移动端观看，登录后功能更完整</span>
+        </div>
+        <div class="fact">
+          <strong>强互动性</strong>
+          <span>弹幕、礼物、粉丝团等构成主要互动方式</span>
+        </div>
+        <div class="fact">
+          <strong>赛事内容</strong>
+          <span>部分电竞赛事提供直播与回放，便于追赛</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>常见问题</h2>
+          <p>整理了一些初次接触虎牙直播时容易遇到的问题，供参考。</p>
+        </div>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>虎牙直播主要看什么内容？</summary>
+          <div class="faq-body">
+            平台内容以游戏直播为主，同时包含电竞赛事、娱乐互动、语音交友等分区。你可以按游戏名搜索，也可以从分区列表进入，逐步找到自己常看的内容类型。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>不登录可以看直播吗？</summary>
+          <div class="faq-body">
+            通常可以直接观看直播画面，但发送弹幕、关注主播、参与部分互动功能一般需要登录账号。具体限制会随平台规则调整，以页面提示为准。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>直播卡顿怎么办？</summary>
+          <div class="faq-body">
+            可以先检查网络是否稳定，再尝试降低清晰度档位；如果是设备性能问题，关闭其他占用资源的程序通常也会有帮助。直播卡顿有时也来自主播端网络，可换一个直播间对比判断。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>想开播需要准备什么？</summary>
+          <div class="faq-body">
+            一般需要完成账号注册与实名认证，准备好电脑或手机等设备、稳定的网络、可用的麦克风，并按平台指引配置推流参数。不同内容类型对设备的要求差异较大，建议先参考平台的开播说明。
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary>观看直播时需要注意什么？</summary>
+          <div class="faq-body">
+            建议遵守平台社区规范，不发布不当言论；涉及账号、支付的操作只通过官方入口进行；对私下交易、索要验证码等行为保持警惕；同时注意控制观看时长与消费。
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>虎牙直播</h4>
+        <p>围绕游戏直播与泛娱乐内容的导航页，整理观看方式、互动功能、开播流程与常见问题，帮助新观众和主播更快了解平台使用方式。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#cats">直播分类</a></li>
+          <li><a href="#hot">热门推荐</a></li>
+          <li><a href="#guide">观看指南</a></li>
+          <li><a href="#stream">开播入门</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用帮助</h4>
+        <ul>
+          <li><a href="#guide">新手上手步骤</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#guide">互动注意事项</a></li>
+          <li><a href="#stream">开播准备清单</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>内容方向</h4>
+        <ul>
+          <li>游戏直播</li>
+          <li>电竞赛事</li>
+          <li>娱乐互动</li>
+          <li>语音社交</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>本页面为虎牙直播相关内容的导航与使用说明，具体功能与规则请以平台实际页面为准。</span>
+      <span>内容仅供信息参考</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('nav.main-nav a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      document.querySelectorAll('nav.main-nav a').forEach(function (a) {
+        a.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+  </html>
